@@ -1,2 +1,2 @@
-# hexoBlog
-hexoBlog
+# myBlog
+### 一个个人博客项目，使用腾讯云云开发托管静态网站。开始使用Hexo博客框架
