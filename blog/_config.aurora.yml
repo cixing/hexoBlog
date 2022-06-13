@@ -108,7 +108,7 @@ gitalk:
   enable: true
   autoExpand: true
   clientID: '9566a38858fe6ba60f39'
-  clientSecret: 'a83e7e29d5d4fc4701ebf8ce90b572ea666d291f'
+  clientSecret: '08becddc932cf95f1b96a40ef071bc12586b1e7e'
   repo: 'hexoBlog'
   owner: 'cixing'
   admin: ['cixing']
