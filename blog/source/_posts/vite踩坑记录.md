@@ -168,5 +168,64 @@ path是引入的path模块 import * as path from 'path';
   然后在index.html通过script标签插入cdn js。
 
  vite引入CDN有两种方式。
- 第一种
- 
+ 第一种 **alias 配置项加载 CDN**
+ ```
+      resolve: {
+        {
+          'react': "https://esm.sh/react@17",
+          'react-dom': "https://esm.sh/react-dom@17",
+        }
+      },
+```
+这里有个地方需要注意，引入的CDN需要是ESM的CDN链接。
+GitHub 上也有专门的 issues：https://github.com/vitejs/vite/issues/2204
+Vite 不会重写从外部文件导入的内容，需要使用支持 ESM 编译的 CDN
+这里有两个支持 ESM 编译的 CDN 资源地址：https://www.skypack.dev/ or https://www.jsdelivr.com/esm
+
+另一种是**安装插件标识 CDN**
+我们需要用到一个插件rollup-plugin-external-globals
+```
+import { defineConfig } from 'vite'
+import externalGlobals from 'rollup-plugin-external-globals'
+
+export default defineConfig({
+  // other config
+  build: {
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      plugins: [
+        externalGlobals({
+          react: 'React',
+          react-dom: 'ReactDom',
+        })
+      ]
+    }
+  }
+})
+```
+然后在 index.html 加入 CDN 文件就可以
+
+**最大的坑来了**
+通常如果使用方法二，大概率会遇到这个问题
+```
+Uncaught TypeError: Failed to resolve module specifier "react". Relative references must start with either "/", "./", or "../".
+```
+vite中也有多个issue提到这个问题
+https://github.com/vitejs/vite/issues/7588
+https://github.com/vitejs/vite/issues/3001
+https://github.com/vitejs/vite/issues/1515
+我理解下来，可能是如果使用方法二，会有混用node_modules和esm模块的风险。 如果项目B依赖了react16版本。项目B使用这种方式打包，然后有项目A依赖项目B，A又依赖react18版本。这个时候，如果项目A打包，external打包都是react18就会有问题。所以更推荐使用第一种引入CDN的方式。
+https://github.com/vitejs/vite/issues/1515#issuecomment-759498390
+![wecom-temp-6d31c2645c6110ea12d5d0da6ea3d3d6.png](https://s2.loli.net/2022/06/13/F2QOVzfdSLTH9pc.png)
+贴一个尤大的回答吧
+```
+Note: you don't really want to implicitly mix node_modules with a CDN like Skypack, because Skypack modules are pre-compiled to link to other Skypack modules and mixing both sources will cause inconsistencies when dependencies cross import one another.
+
+I also wouldn't really recommend implicitly downloading from CDNs without version control. It may be easy when you add a new dependency, but you will have to revert to explicit version control when any one of the deps needs a specific version.
+
+Downloading from CDN also does not provide typing since it only downloads the module code.
+
+Auto install to node_modules can be resolved once @rollup/plugin-auto-install + vue failing at build time  #1500 is fixed.
+If you just want to use the CDN for prototyping, you can alias deps to a CDN link.
+Alternatively you can take a look at https://github.com/vitejs/vite/tree/plugin-cdn/packages/plugin-cdn (not released yet)
+```
