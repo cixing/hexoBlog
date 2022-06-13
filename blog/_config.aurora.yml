@@ -35,11 +35,13 @@ authors:
   ##! example
   # TriDiamond:
   #   name: TriDiamond
-  #   avatar: https://up.enterdesk.com/edpic_source/44/ff/3d/44ff3d6bd2819d524facfcc33205d4cd.jpg
-  #   link: https://github.com/TriDiamond
+  #   avatar: https://github.com/
+  #   link: https://github.com/cixing
   #   description: 'Think like an artist, code like an artisan.'
-  #   socials:
-  #     github: https://tridiamond.tech
+socials:
+  github: https://github.com/cixing
+  juejin: https://juejin.cn/user/3825956195680046
+  stackoverflow: https://stackoverflow.com/users/12335377/minghua-zhang
 
 #! ---------------------------------------------------------------
 #! Menu Configs
@@ -67,8 +69,8 @@ theme:
 #! Social Configs
 #! @docs https://aurora.tridiamond.tech/guide/social.html
 #! ---------------------------------------------------------------
-socials:
-  customs:
+# socials:
+#   customs:
   ##! Example:
   ##! --- Using SVG
   # bilibili:
@@ -108,10 +110,10 @@ gitalk:
   clientID: ''
   clientSecret: ''
   repo: 'dev-blog-comments'
-  owner: 'TriDiamond'
-  admin: ['TriDiamond']
+  owner: 'cixing'
+  admin: ['cixing']
   id: uid
-  language: en
+  language: cn
   distractionFreeMode: true
   recentComment: true
   proxy: ''
