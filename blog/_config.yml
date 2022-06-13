@@ -52,7 +52,7 @@ highlight:
   hljs: false
 prismjs:
   enable: true
-  preprocess: true
+  preprocess: false
   line_number: true
   tab_replace: ''
 
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: aurora
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
