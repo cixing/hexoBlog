@@ -107,9 +107,9 @@ site_meta:
 gitalk:
   enable: true
   autoExpand: true
-  clientID: ''
-  clientSecret: ''
-  repo: 'dev-blog-comments'
+  clientID: 'cli0a2070bb53e83ef5659c'
+  clientSecret: '202b883115f6e7a62f6533373c8a0528f39d704e'
+  repo: 'cixing.github.io'
   owner: 'cixing'
   admin: ['cixing']
   id: uid
