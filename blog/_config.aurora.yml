@@ -11,10 +11,10 @@
 site:
   title: 张明华的个人网站
   subtitle: '记录一些前端知识点和生活心得'
-  description: '前端知识点'
+  description: '一位非著名专业前端攻城狮, 现就职于腾讯'
   keywords: 技术
   author: cixing
-  language: zh-CN
+  language: cn
   timezone: 'Asia/Shanghai'
   link: '/'
   multi_language: true
