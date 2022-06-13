@@ -3,8 +3,6 @@ title: webpack to vite踩坑记录
 date: 2022-06-10 14:09:26
 tags: vite
 ---
-# webpack to vite踩坑记录
-
 ## 为什么换vite
 1. vite开发HRM非常快，毫秒级时延体验丝滑
 2. 学习一下vite
