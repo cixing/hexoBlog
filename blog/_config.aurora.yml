@@ -122,8 +122,8 @@ gitalk:
 # see https://valine.js.org/quickstart.html
 valine:
   enable: true
-  app_id: '66IFtJw47mm25pOA9tPLOv0e-MdYXbMMI'
-  app_key: 'drQEiy9ovtmwtlsjQYOBS7Ab'
+  app_id: 'iDVk2YT19gu79sekhBDMVcA4-gzGzoHsz'
+  app_key: 'r3VNLQtxEkEXSAfIPJdTDlQ3'
   avatar: ''
   placeholder: Leave your thoughts behind~
   visitor: true
