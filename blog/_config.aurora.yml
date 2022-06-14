@@ -105,14 +105,14 @@ site_meta:
 
 # For local development only!
 gitalk:
-  enable: true
+  enable: false
   autoExpand: true
   clientID: '9566a38858fe6ba60f39'
   clientSecret: '08becddc932cf95f1b96a40ef071bc12586b1e7e'
   repo: 'hexoBlog'
   owner: 'cixing'
   admin: ['cixing']
-  id: window.location.pathname
+  id: location.pathname
   language: cn
   distractionFreeMode: true
   recentComment: true
@@ -121,9 +121,9 @@ gitalk:
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html
 valine:
-  enable: false
-  app_id:
-  app_key:
+  enable: true
+  app_id: '66IFtJw47mm25pOA9tPLOv0e-MdYXbMMI'
+  app_key: 'drQEiy9ovtmwtlsjQYOBS7Ab'
   avatar: ''
   placeholder: Leave your thoughts behind~
   visitor: true
@@ -131,7 +131,7 @@ valine:
   avatarForce: false
   meta: ['nick', 'mail']
   requiredFields: []
-  admin: 'TriDiamond'
+  admin: 'cixing'
   recentComment: true
 
 # Enable Busuanzi statistic plugin
